@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Delphi">
+  <DataContextMoniker Name="/DelphiDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4a943010-b7ca-4019-9c3a-9e9c7c0bffb4" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DelphiDataContext/DL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="449dbd53-b0e9-4335-835e-6798f721c646" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5b8b3d55-9cea-45d5-8874-0973744310fc" isExpanded="false" absoluteBounds="0.5, 1, 2, 0.45">
+      <DataClassMoniker Name="/DelphiDataContext/DLView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47f18350-9445-4120-b6ae-6b9519cd5e41" absoluteBounds="0.515, 1.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fc9e0958-2420-4a20-96fd-e0c5b4e4dd90" isExpanded="false" absoluteBounds="0.5, 2.5, 2, 0.45">
+      <DataClassMoniker Name="/DelphiDataContext/GL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74e0ad0a-549d-47fd-a2f1-9a9c8f47e661" absoluteBounds="0.515, 2.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="86c225bc-263b-4c8e-90c7-d796827c6701" isExpanded="false" absoluteBounds="0.5, 3, 2, 0.45">
+      <DataClassMoniker Name="/DelphiDataContext/SL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="649bac82-6270-4303-a7e7-901e04b4fcc1" absoluteBounds="0.51500000000000012, 3.46, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 2.95); (1.5 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DelphiDataContext/GL/GL_SL" />
+      <nodes>
+        <classShapeMoniker Id="fc9e0958-2420-4a20-96fd-e0c5b4e4dd90" />
+        <classShapeMoniker Id="86c225bc-263b-4c8e-90c7-d796827c6701" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.18419230769231 : 3.45); (1.18419230769231 : 3.7); (1.83084615384615 : 3.7); (1.83084615384615 : 3.45)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DelphiDataContext/SL/SL_SL" />
+      <nodes>
+        <classShapeMoniker Id="86c225bc-263b-4c8e-90c7-d796827c6701" />
+        <classShapeMoniker Id="86c225bc-263b-4c8e-90c7-d796827c6701" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="79cfb9c5-d564-4385-a6bd-f520e62f68ba" isExpanded="false" absoluteBounds="0.5, 2, 2, 0.45">
+      <DataClassMoniker Name="/DelphiDataContext/AccVchHdr" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bfd91c04-fe80-4602-975f-87a42205de19" absoluteBounds="0.51499999999999968, 2.46, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="14cd8312-2afb-438a-a1ae-9ff355541f3b" isExpanded="false" absoluteBounds="0.5, 1.5, 2, 0.45">
+      <DataClassMoniker Name="/DelphiDataContext/AccVchItm" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bbff33c7-b679-4a67-95a8-9a25990065e1" absoluteBounds="0.51499999999999968, 1.96, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.4865 : 0.95); (3.03125 : 1.06670882037363); (3.03125 : 1.725); (2.95833333333333 : 1.725 : JumpStart); (2.79166666666667 : 1.725 : JumpEnd); (2.5 : 1.725)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DelphiDataContext/DL/DL_AccVchItm" />
+      <nodes>
+        <classShapeMoniker Id="4a943010-b7ca-4019-9c3a-9e9c7c0bffb4" />
+        <classShapeMoniker Id="14cd8312-2afb-438a-a1ae-9ff355541f3b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(0.5 : 0.95); (0.125 : 1.325); (0.125 : 1.725); (0.5 : 1.725)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DelphiDataContext/DL/DL_AccVchItm1" />
+      <nodes>
+        <classShapeMoniker Id="4a943010-b7ca-4019-9c3a-9e9c7c0bffb4" />
+        <classShapeMoniker Id="14cd8312-2afb-438a-a1ae-9ff355541f3b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(0.5 : 3); (0.125 : 2.625); (0.125 : 2.325); (0.5 : 1.95)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DelphiDataContext/SL/SL_AccVchItm" />
+      <nodes>
+        <classShapeMoniker Id="86c225bc-263b-4c8e-90c7-d796827c6701" />
+        <classShapeMoniker Id="14cd8312-2afb-438a-a1ae-9ff355541f3b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.5312525 : 2); (1.5312525 : 1.95)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DelphiDataContext/AccVchHdr/AccVchHdr_AccVchItm" />
+      <nodes>
+        <classShapeMoniker Id="79cfb9c5-d564-4385-a6bd-f520e62f68ba" />
+        <classShapeMoniker Id="14cd8312-2afb-438a-a1ae-9ff355541f3b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.49515384615385 : 0.95); (3.15625 : 1.09163515790533); (3.15625 : 1.725); (2.95833333333333 : 1.725 : JumpStart); (2.79166666666667 : 1.725 : JumpEnd); (2.5 : 1.725)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DelphiDataContext/DL/DL_AccVchItm2" />
+      <nodes>
+        <classShapeMoniker Id="4a943010-b7ca-4019-9c3a-9e9c7c0bffb4" />
+        <classShapeMoniker Id="14cd8312-2afb-438a-a1ae-9ff355541f3b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3a3e8fc4-0d41-461b-b0ba-e785f4e3459b" isExpanded="false" absoluteBounds="3.375, 0.625, 2, 0.45">
+      <DataClassMoniker Name="/DelphiDataContext/CostCenter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e9e37f2-de5f-47f5-ac6e-c0096fadcae7" absoluteBounds="3.39, 1.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 0.745170076923077); (3.375 : 0.745170076923077)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DelphiDataContext/DL/DL_CostCenter" />
+      <nodes>
+        <classShapeMoniker Id="4a943010-b7ca-4019-9c3a-9e9c7c0bffb4" />
+        <classShapeMoniker Id="3a3e8fc4-0d41-461b-b0ba-e785f4e3459b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fc4cd01c-f11c-4139-9fbc-a4e8de7f3ab5" isExpanded="false" absoluteBounds="3.375, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/DelphiDataContext/Crspnd" />
+      <nestedChildShapes>
+        <elementListCompartment Id="266fd505-e3d9-42c1-a900-31086acb40d4" absoluteBounds="3.39, 1.585, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 0.95); (2.68569481203632 : 0.987138962407264 : JumpStart); (2.84912492465148 : 1.01982498493029 : JumpEnd); (3.375 : 1.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DelphiDataContext/DL/DL_Crspnd" />
+      <nodes>
+        <classShapeMoniker Id="4a943010-b7ca-4019-9c3a-9e9c7c0bffb4" />
+        <classShapeMoniker Id="fc4cd01c-f11c-4139-9fbc-a4e8de7f3ab5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5a890a14-3f5f-4730-affa-85a670cc2c35" isExpanded="false" absoluteBounds="0.625, 5.125, 2, 0.45">
+      <DataClassMoniker Name="/DelphiDataContext/InvProject" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2fac1c4b-0cbf-4349-aff6-3a5710d35f42" absoluteBounds="0.64000000000000012, 5.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4631cf6d-d2ad-4c3d-a6be-7036c0e0ce03" isExpanded="false" absoluteBounds="3.375, 1.625, 2, 0.45">
+      <DataClassMoniker Name="/DelphiDataContext/RpaBank" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c50d1252-e9aa-4cdf-859e-d7bfb55dfb43" absoluteBounds="3.3899999999999997, 2.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="30ff9f8e-25f3-48b8-9b2c-e1f323c9d866" isExpanded="false" absoluteBounds="0.625, 4.625, 2, 0.45">
+      <DataClassMoniker Name="/DelphiDataContext/RpaBankAccount" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4410690e-a242-4a49-bfd5-adb7f28def4f" absoluteBounds="0.64, 5.085, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 0.946191307692308); (2.875 : 1.0265323956044); (2.875 : 4.25); (3 : 4.25); (2.625 : 4.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DelphiDataContext/DL/DL_RpaBankAccount" />
+      <nodes>
+        <classShapeMoniker Id="4a943010-b7ca-4019-9c3a-9e9c7c0bffb4" />
+        <classShapeMoniker Id="30ff9f8e-25f3-48b8-9b2c-e1f323c9d866" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2cd70f81-6768-4512-aeb7-0bc1b0ec6ff8" isExpanded="false" absoluteBounds="0.625, 5.625, 2, 0.45">
+      <DataClassMoniker Name="/DelphiDataContext/RpaBankAccountType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="79b5ce27-005f-4672-937e-f32173132627" absoluteBounds="0.64000000000000012, 6.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.625 : 5.625); (1.625 : 5.590625); (2.640625 : 5.590625); (2.640625 : 4.85); (2.625 : 4.85)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DelphiDataContext/RpaBankAccountType/RpaBankAccountType_RpaBankAccount" />
+      <nodes>
+        <classShapeMoniker Id="2cd70f81-6768-4512-aeb7-0bc1b0ec6ff8" />
+        <classShapeMoniker Id="30ff9f8e-25f3-48b8-9b2c-e1f323c9d866" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="cd90d3f2-c391-4786-ab1f-ac5bc621adb3" isExpanded="false" absoluteBounds="0.5, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/DelphiDataContext/AccVchType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60296fb1-dbb4-49db-83aa-f1d0d8b0bcb0" absoluteBounds="0.51499999999999968, 3.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

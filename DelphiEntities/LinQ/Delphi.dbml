@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="jahad" Class="DelphiDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=Moudi\Fury;Initial Catalog=jahad;User ID=sa;Encrypt=False;TrustServerCertificate=True" SettingsObjectName="DelphiEntities.Properties.Settings" SettingsPropertyName="jahadConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="Acc.DL" Member="DLs">
+    <Type Name="DL">
+      <Column Name="AccNum" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DLType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LatinTitle" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Definition" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HasCurrency" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CurrencyRef" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Association Name="DL_AccVchItm" Member="AccVchItms" ThisKey="AccNum" OtherKey="DlFive" Type="AccVchItm" />
+      <Association Name="DL_AccVchItm1" Member="AccVchItms1" ThisKey="AccNum" OtherKey="DlSix" Type="AccVchItm" />
+      <Association Name="DL_AccVchItm2" Member="AccVchItms2" ThisKey="AccNum" OtherKey="DLRef" Type="AccVchItm" />
+      <Association Name="DL_CostCenter" Member="CostCenters" ThisKey="AccNum" OtherKey="DLRef" Type="CostCenter" />
+      <Association Name="DL_Crspnd" Member="Crspnds" ThisKey="AccNum" OtherKey="DLRef" Type="Crspnd" />
+      <Association Name="DL_RpaBankAccount" Member="RpaBankAccounts" ThisKey="AccNum" OtherKey="DlRef" Type="RpaBankAccount" />
+    </Type>
+  </Table>
+  <Table Name="Acc.DLViews" Member="DLViews">
+    <Type Name="DLView">
+      <Column Name="DLType" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DLName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ViewName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="WrapperName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NewDataIndex" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LatinTitle" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Acc.GL" Member="GLs">
+    <Type Name="GL">
+      <Column Name="AccNum" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PLRef" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="BalanceType" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="LatinTitle" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Definition" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="GL_SL" Member="SLs" ThisKey="AccNum" OtherKey="GLRef" Type="SL" />
+    </Type>
+  </Table>
+  <Table Name="Acc.SL" Member="SLs">
+    <Type Name="SL">
+      <Column Name="AccNum" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="GLRef" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="BalanceType" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="HasCurrency" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CurrencyRef" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HasExchange" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DLGroups" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LatinTitle" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Definition" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DlFive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DLSix" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HasWarranty" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="HasQty" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="HasCash" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="OpositNatureSLRef" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="SL_SL" Member="SLs" ThisKey="AccNum" OtherKey="OpositNatureSLRef" Type="SL" />
+      <Association Name="SL_AccVchItm" Member="AccVchItms" ThisKey="AccNum" OtherKey="SLRef" Type="AccVchItm" />
+      <Association Name="GL_SL" Member="GL" ThisKey="GLRef" OtherKey="AccNum" Type="GL" IsForeignKey="true" />
+      <Association Name="SL_SL" Member="SL1" ThisKey="OpositNatureSLRef" OtherKey="AccNum" Type="SL" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Acc.AccVchHdr" Member="AccVchHdrs">
+    <Type Name="AccVchHdr">
+      <Column Name="HdrVchID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VchDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LocalNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ctgry" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SystemsRef" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="ExchHdrRef" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Exchangable" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Month" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DailyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TempNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Creator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Confirmer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BranchCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HdrDesc" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="HdrLatinDesc" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GroupRef" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="AccVchHdr_AccVchItm" Member="AccVchItms" ThisKey="HdrVchID" OtherKey="HdrRef" Type="AccVchItm" />
+    </Type>
+  </Table>
+  <Table Name="Acc.AccVchItm" Member="AccVchItms">
+    <Type Name="AccVchItm">
+      <Column Name="VchItmId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Seq" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HdrRef" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SLRef" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="DLRef" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Descr" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Debit" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Credit" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CurVal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LatinDescr" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CurrencyRef" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RepCurRef" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HasExchange" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="HasCurrency" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="PersuitNo" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="PersuitDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DlFive" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="DlSix" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VchDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Ctgry" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="SystemsRef" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="Year" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Month" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TempNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="branch_code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CurRateVal" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CurConvFact" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccountBaseCur" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreditCurVal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DebitCurVal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DebitQty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CreditQty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="DL_AccVchItm" Member="DL" ThisKey="DlFive" OtherKey="AccNum" Type="DL" IsForeignKey="true" />
+      <Association Name="DL_AccVchItm1" Member="DL1" ThisKey="DlSix" OtherKey="AccNum" Type="DL" IsForeignKey="true" />
+      <Association Name="SL_AccVchItm" Member="SL" ThisKey="SLRef" OtherKey="AccNum" Type="SL" IsForeignKey="true" />
+      <Association Name="AccVchHdr_AccVchItm" Member="AccVchHdr" ThisKey="HdrRef" OtherKey="HdrVchID" Type="AccVchHdr" IsForeignKey="true" />
+      <Association Name="DL_AccVchItm2" Member="DL2" ThisKey="DLRef" OtherKey="AccNum" Type="DL" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="cac.CostCenter" Member="CostCenters">
+    <Type Name="CostCenter">
+      <Column Name="CostCenterID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CCCode" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CenterType" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="DLRef" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="ccTreeRef" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LatinTitle" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AlocBase" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DL_CostCenter" Member="DL" ThisKey="DLRef" OtherKey="AccNum" Type="DL" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="gnr.Crspnd" Member="Crspnds">
+    <Type Name="Crspnd">
+      <Column Name="Serial" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RecType" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="EconCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NickName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CompType" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="CompName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Usage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DLRef" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="MainAddrRef" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Title_En" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FName_En" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LName_En" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CompName_En" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NationalCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IDNo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="DL_Crspnd" Member="DL" ThisKey="DLRef" OtherKey="AccNum" Type="DL" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="inv.InvProjects" Member="InvProjects">
+    <Type Name="InvProject">
+      <Column Name="PrjId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PrjCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PrjName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MngrRef" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="rpa.RpaBank" Member="RpaBanks">
+    <Type Name="RpaBank">
+      <Column Name="RpaBankId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descr" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="LatinDescr" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastVersionDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SLRef" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="rpa.RpaBankAccount" Member="RpaBankAccounts">
+    <Type Name="RpaBankAccount">
+      <Column Name="RpaBankAccountId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RpaBankAccountTypeRef" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OpeningDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ReconcileDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FirstAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CurrencyRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RpaBranchRef" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CurrencyRef" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DlRef" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="CreditAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ClosingDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Descr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReserveAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LastAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RateDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FixCurRef" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastVersionDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="BankBillMacro" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="SlRef" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="IBNA" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="DL_RpaBankAccount" Member="DL" ThisKey="DlRef" OtherKey="AccNum" Type="DL" IsForeignKey="true" />
+      <Association Name="RpaBankAccountType_RpaBankAccount" Member="RpaBankAccountType" ThisKey="RpaBankAccountTypeRef" OtherKey="RpaBankAccountTypeID" Type="RpaBankAccountType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="rpa.RpaBankAccountType" Member="RpaBankAccountTypes">
+    <Type Name="RpaBankAccountType">
+      <Column Name="RpaBankAccountTypeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccountTypeDescr" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HasChq" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="RpaBankAccountType_RpaBankAccount" Member="RpaBankAccounts" ThisKey="RpaBankAccountTypeID" OtherKey="RpaBankAccountTypeRef" Type="RpaBankAccount" />
+    </Type>
+  </Table>
+  <Table Name="Acc.AccVchType" Member="AccVchTypes">
+    <Type Name="AccVchType">
+      <Column Name="Code" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LatinTitle" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
