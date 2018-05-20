@@ -41,11 +41,17 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,6 +77,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\FinVoucherService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Views\DBConnectionStringForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +133,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\FinVoucherService\IE.FinVoucherService.VoucherData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinVoucherService\IE.FinVoucherService.VoucherInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinVoucherService\VoucherService.wsdl" />
+    <None Include="Service References\FinVoucherService\VoucherService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FinVoucherService\VoucherService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FinVoucherService\VoucherService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FinVoucherService\VoucherService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FinVoucherService\VoucherService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -142,6 +175,10 @@
     <ProjectReference Include="..\RahkaranEntities\RahkaranEntities.csproj">
       <Project>{D0DA299E-73FF-48DA-AD65-526DF3E170E3}</Project>
       <Name>RahkaranEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VoucherWebService\VoucherWebService.csproj">
+      <Project>{896635b5-424f-4963-9f23-8b319921a52c}</Project>
+      <Name>VoucherWebService</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -185,6 +222,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\if_Sign_Out_1295977.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save As.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\FinVoucherService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FinVoucherService\VoucherService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FinVoucherService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FinVoucherService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FinVoucherService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Applications.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

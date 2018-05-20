@@ -235,4 +235,20 @@
       <Column Name="LatinTitle" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.DLStore" Member="DLStores">
+    <Type Name="DLStore">
+      <Column Name="DLID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="DLTypeRef" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ReferenceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Title_En" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CurrencyRef" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EntityCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Discriminator" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="State" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
 </Database>

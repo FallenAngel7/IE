@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="69b7d158-bee4-40e4-aa8e-9df59d52abfb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/Jahad/Financial/VoucherManagement/Services/VoucherService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="VoucherService.xsd" MetadataType="Schema" ID="270fffda-b598-452b-8e05-f3da59677441" SourceId="1" SourceUrl="http://localhost/Jahad3g/x43fabd14/Financial/VoucherManagement/Services/VoucherService.svc?xsd=xsd4" />
+    <MetadataFile FileName="VoucherService1.xsd" MetadataType="Schema" ID="7e9f85f2-d5a4-4a05-8fcf-d0f90d1717ce" SourceId="1" SourceUrl="http://localhost/Jahad3g/x43fabd14/Financial/VoucherManagement/Services/VoucherService.svc?xsd=xsd2" />
+    <MetadataFile FileName="VoucherService2.xsd" MetadataType="Schema" ID="ace2e514-dcb6-43b5-899d-d302710fbb41" SourceId="1" SourceUrl="http://localhost/Jahad3g/x43fabd14/Financial/VoucherManagement/Services/VoucherService.svc?xsd=xsd1" />
+    <MetadataFile FileName="VoucherService.disco" MetadataType="Disco" ID="374c7ffd-26f6-439a-9b48-5333de82eb0c" SourceId="1" SourceUrl="http://localhost/Jahad3g/x43fabd14/Financial/VoucherManagement/Services/VoucherService.svc?disco" />
+    <MetadataFile FileName="VoucherService3.xsd" MetadataType="Schema" ID="ed46300d-25e6-45df-a73f-e08ed1d9dc01" SourceId="1" SourceUrl="http://localhost/Jahad3g/x43fabd14/Financial/VoucherManagement/Services/VoucherService.svc?xsd=xsd0" />
+    <MetadataFile FileName="VoucherService.wsdl" MetadataType="Wsdl" ID="4927d640-624b-43f3-a95c-9014c72b52b8" SourceId="1" SourceUrl="http://localhost/Jahad3g/x43fabd14/Financial/VoucherManagement/Services/VoucherService.svc?wsdl" />
+    <MetadataFile FileName="VoucherService4.xsd" MetadataType="Schema" ID="64e9c260-a8d6-47f9-a5af-6c085f788026" SourceId="1" SourceUrl="http://localhost/Jahad3g/x43fabd14/Financial/VoucherManagement/Services/VoucherService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

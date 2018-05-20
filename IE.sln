@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelphiEntities", "DelphiEnt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RahkaranEntities", "RahkaranEntities\RahkaranEntities.csproj", "{D0DA299E-73FF-48DA-AD65-526DF3E170E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoucherWebService", "VoucherWebService\VoucherWebService.csproj", "{896635B5-424F-4963-9F23-8B319921A52C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D0DA299E-73FF-48DA-AD65-526DF3E170E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0DA299E-73FF-48DA-AD65-526DF3E170E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0DA299E-73FF-48DA-AD65-526DF3E170E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{896635B5-424F-4963-9F23-8B319921A52C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{896635B5-424F-4963-9F23-8B319921A52C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{896635B5-424F-4963-9F23-8B319921A52C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{896635B5-424F-4963-9F23-8B319921A52C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

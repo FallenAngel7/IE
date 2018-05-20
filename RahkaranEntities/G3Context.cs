@@ -20,5 +20,8 @@ namespace RahkaranEntities
         public DbSet<Voucher> Vouchers { get; set; }
         public DbSet<VoucherItem> VoucherItems { get; set; }
         public DbSet<VoucherType> VoucherTypes { get; set; }
+        public DbSet<FiscalYear> FiscalYears { get; set; }
+        public DbSet<Branch> Branches { get; set; }
+        public DbSet<Ledger> Ledgers { get; set; }
     }
 }

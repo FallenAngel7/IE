@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace RahkaranEntities
 {
+    [Table("Fin3.DL")]
     public class DL
     {
+        [Key]
         public long DLID { get; set; }
         public long DLTypeRef { get; set; }
         public long ReferenceID { get; set; }        

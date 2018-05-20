@@ -17,5 +17,7 @@ namespace IE.Entities
         public DbSet<VoucherTypeMap> VoucherTypeMaps { get; set; }
         public DbSet<VoucherMap> VoucherMaps { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<LogHistory> LogHistories { get; set; }
+
     }
 }

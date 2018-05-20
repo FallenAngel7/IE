@@ -204,6 +204,14 @@ namespace DelphiEntities.LinQ
 				return this.GetTable<AccVchType>();
 			}
 		}
+		
+		public System.Data.Linq.Table<DLStore> DLStores
+		{
+			get
+			{
+				return this.GetTable<DLStore>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="Acc.DL")]
@@ -5319,6 +5327,231 @@ namespace DelphiEntities.LinQ
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DLStore")]
+	public partial class DLStore
+	{
+		
+		private long _DLID;
+		
+		private long _DLTypeRef;
+		
+		private System.Nullable<long> _ReferenceID;
+		
+		private string _Code;
+		
+		private string _Title;
+		
+		private string _Title_En;
+		
+		private System.Nullable<long> _CurrencyRef;
+		
+		private System.Nullable<int> _EntityCode;
+		
+		private string _Discriminator;
+		
+		private string _Description;
+		
+		private bool _State;
+		
+		private System.Data.Linq.Binary _Version;
+		
+		public DLStore()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DLID", DbType="BigInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public long DLID
+		{
+			get
+			{
+				return this._DLID;
+			}
+			set
+			{
+				if ((this._DLID != value))
+				{
+					this._DLID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DLTypeRef", DbType="BigInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public long DLTypeRef
+		{
+			get
+			{
+				return this._DLTypeRef;
+			}
+			set
+			{
+				if ((this._DLTypeRef != value))
+				{
+					this._DLTypeRef = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReferenceID", DbType="BigInt", UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<long> ReferenceID
+		{
+			get
+			{
+				return this._ReferenceID;
+			}
+			set
+			{
+				if ((this._ReferenceID != value))
+				{
+					this._ReferenceID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Code", DbType="NVarChar(64) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Code
+		{
+			get
+			{
+				return this._Code;
+			}
+			set
+			{
+				if ((this._Code != value))
+				{
+					this._Code = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(128) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title_En", DbType="NVarChar(128)", UpdateCheck=UpdateCheck.Never)]
+		public string Title_En
+		{
+			get
+			{
+				return this._Title_En;
+			}
+			set
+			{
+				if ((this._Title_En != value))
+				{
+					this._Title_En = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyRef", DbType="BigInt", UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<long> CurrencyRef
+		{
+			get
+			{
+				return this._CurrencyRef;
+			}
+			set
+			{
+				if ((this._CurrencyRef != value))
+				{
+					this._CurrencyRef = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntityCode", DbType="Int", UpdateCheck=UpdateCheck.Never)]
+		public System.Nullable<int> EntityCode
+		{
+			get
+			{
+				return this._EntityCode;
+			}
+			set
+			{
+				if ((this._EntityCode != value))
+				{
+					this._EntityCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discriminator", DbType="NVarChar(64)", UpdateCheck=UpdateCheck.Never)]
+		public string Discriminator
+		{
+			get
+			{
+				return this._Discriminator;
+			}
+			set
+			{
+				if ((this._Discriminator != value))
+				{
+					this._Discriminator = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(512)", UpdateCheck=UpdateCheck.Never)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this._Version = value;
+				}
 			}
 		}
 	}

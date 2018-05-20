@@ -33,8 +33,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.rddDelphiVoucherType = new Telerik.WinControls.UI.RadDropDownList();
@@ -48,16 +46,36 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.rddDelphiDLType = new Telerik.WinControls.UI.RadDropDownList();
-            this.btnDeleteDLTypeMap = new System.Windows.Forms.Button();
-            this.btnAddDLTypeMap = new System.Windows.Forms.Button();
             this.rddG3DLType = new Telerik.WinControls.UI.RadDropDownList();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.gb1 = new System.Windows.Forms.GroupBox();
+            this.txtEstablishDate = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rddFiscalYear = new Telerik.WinControls.UI.RadDropDownList();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.pBar = new System.Windows.Forms.ProgressBar();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.rddBranches = new Telerik.WinControls.UI.RadDropDownList();
+            this.rddLedgers = new Telerik.WinControls.UI.RadDropDownList();
+            this.gb2 = new System.Windows.Forms.GroupBox();
+            this.txtSgPath = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDeleteDLTypeMap = new System.Windows.Forms.Button();
+            this.btnAddDLTypeMap = new System.Windows.Forms.Button();
+            this.btnChange = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnExecute = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pBar = new System.Windows.Forms.ProgressBar();
-            this.lblStatus = new System.Windows.Forms.Label();
+            this.gb3 = new System.Windows.Forms.GroupBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -72,7 +90,15 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rddDelphiDLType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rddG3DLType)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            this.gb1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEstablishDate)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rddFiscalYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rddBranches)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rddLedgers)).BeginInit();
+            this.gb2.SuspendLayout();
+            this.gb3.SuspendLayout();
             this.SuspendLayout();
             // 
             // documentContainer1
@@ -123,34 +149,6 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "تطبیق انواع سند حسابداری";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Image = global::IE.Properties.Resources.Delete;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(287, 91);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnDelete.Size = new System.Drawing.Size(120, 37);
-            this.btnDelete.TabIndex = 8;
-            this.btnDelete.Text = "حذف تطبیق";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Image = global::IE.Properties.Resources.Add;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(409, 91);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAdd.Size = new System.Drawing.Size(120, 37);
-            this.btnAdd.TabIndex = 9;
-            this.btnAdd.Text = "اضافه";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label2
             // 
@@ -250,9 +248,9 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.rddDelphiDLType);
+            this.groupBox2.Controls.Add(this.rddG3DLType);
             this.groupBox2.Controls.Add(this.btnDeleteDLTypeMap);
             this.groupBox2.Controls.Add(this.btnAddDLTypeMap);
-            this.groupBox2.Controls.Add(this.rddG3DLType);
             this.groupBox2.Location = new System.Drawing.Point(13, 19);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(768, 147);
@@ -286,6 +284,192 @@
             this.rddDelphiDLType.TabIndex = 4;
             this.rddDelphiDLType.Text = "radDropDownList1";
             // 
+            // rddG3DLType
+            // 
+            this.rddG3DLType.Location = new System.Drawing.Point(287, 65);
+            this.rddG3DLType.Name = "rddG3DLType";
+            this.rddG3DLType.Size = new System.Drawing.Size(287, 20);
+            this.rddG3DLType.TabIndex = 5;
+            this.rddG3DLType.Text = "radDropDownList1";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.gb3);
+            this.tabPage4.Controls.Add(this.gb2);
+            this.tabPage4.Controls.Add(this.btnChange);
+            this.tabPage4.Controls.Add(this.btnUpdate);
+            this.tabPage4.Controls.Add(this.gb1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 23);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(789, 370);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "   تنظیمات   ";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // gb1
+            // 
+            this.gb1.Controls.Add(this.rddLedgers);
+            this.gb1.Controls.Add(this.rddBranches);
+            this.gb1.Controls.Add(this.rddFiscalYear);
+            this.gb1.Controls.Add(this.label5);
+            this.gb1.Controls.Add(this.label8);
+            this.gb1.Controls.Add(this.label7);
+            this.gb1.Controls.Add(this.txtEstablishDate);
+            this.gb1.Controls.Add(this.label6);
+            this.gb1.Location = new System.Drawing.Point(8, 13);
+            this.gb1.Name = "gb1";
+            this.gb1.Size = new System.Drawing.Size(768, 148);
+            this.gb1.TabIndex = 2;
+            this.gb1.TabStop = false;
+            this.gb1.Text = "تنظیمات پایه";
+            // 
+            // txtEstablishDate
+            // 
+            this.txtEstablishDate.Location = new System.Drawing.Point(563, 26);
+            this.txtEstablishDate.Name = "txtEstablishDate";
+            this.txtEstablishDate.Size = new System.Drawing.Size(164, 20);
+            this.txtEstablishDate.TabIndex = 0;
+            this.txtEstablishDate.TabStop = false;
+            this.txtEstablishDate.Text = "Saturday, May 19, 2018";
+            this.txtEstablishDate.Value = new System.DateTime(2018, 5, 19, 13, 48, 24, 811);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(267, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(266, 14);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "اسناد حسابداری پس از این تاریخ منتقل خواهند شد";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel2.Controls.Add(this.lblStatus);
+            this.panel2.Controls.Add(this.pBar);
+            this.panel2.Controls.Add(this.btnExit);
+            this.panel2.Controls.Add(this.btnExecute);
+            this.panel2.Location = new System.Drawing.Point(0, 491);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(860, 51);
+            this.panel2.TabIndex = 1;
+            // 
+            // rddFiscalYear
+            // 
+            this.rddFiscalYear.Location = new System.Drawing.Point(563, 113);
+            this.rddFiscalYear.Name = "rddFiscalYear";
+            this.rddFiscalYear.Size = new System.Drawing.Size(164, 20);
+            this.rddFiscalYear.TabIndex = 5;
+            this.rddFiscalYear.Text = "سال مالی";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(473, 113);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 14);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "سال مالی";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(108, 13);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 14);
+            this.lblStatus.TabIndex = 2;
+            // 
+            // pBar
+            // 
+            this.pBar.Location = new System.Drawing.Point(105, 32);
+            this.pBar.Name = "pBar";
+            this.pBar.Size = new System.Drawing.Size(690, 10);
+            this.pBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.pBar.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(336, 55);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(197, 14);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "اسناد به این شعبه منتقل خواهند شد";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(326, 84);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(207, 14);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "اسناد به این دفتر کل منتقل خواهند شد";
+            // 
+            // rddBranches
+            // 
+            this.rddBranches.Location = new System.Drawing.Point(563, 55);
+            this.rddBranches.Name = "rddBranches";
+            this.rddBranches.Size = new System.Drawing.Size(164, 20);
+            this.rddBranches.TabIndex = 5;
+            this.rddBranches.Text = "شعبه راهکاران";
+            // 
+            // rddLedgers
+            // 
+            this.rddLedgers.Location = new System.Drawing.Point(563, 84);
+            this.rddLedgers.Name = "rddLedgers";
+            this.rddLedgers.Size = new System.Drawing.Size(164, 20);
+            this.rddLedgers.TabIndex = 5;
+            this.rddLedgers.Text = "دفتر کل";
+            // 
+            // gb2
+            // 
+            this.gb2.Controls.Add(this.txtSgPath);
+            this.gb2.ForeColor = System.Drawing.Color.Maroon;
+            this.gb2.Location = new System.Drawing.Point(8, 165);
+            this.gb2.Name = "gb2";
+            this.gb2.Size = new System.Drawing.Size(768, 74);
+            this.gb2.TabIndex = 11;
+            this.gb2.TabStop = false;
+            this.gb2.Text = "آدرس راهکاران";
+            // 
+            // txtSgPath
+            // 
+            this.txtSgPath.Location = new System.Drawing.Point(12, 34);
+            this.txtSgPath.Name = "txtSgPath";
+            this.txtSgPath.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtSgPath.Size = new System.Drawing.Size(715, 22);
+            this.txtSgPath.TabIndex = 1;
+            this.txtSgPath.Text = "http://localhost/Jahad";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Image = global::IE.Properties.Resources.Delete;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(287, 91);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnDelete.Size = new System.Drawing.Size(137, 37);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "حذف تطبیق";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Image = global::IE.Properties.Resources.Add;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(430, 91);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAdd.Size = new System.Drawing.Size(144, 37);
+            this.btnAdd.TabIndex = 9;
+            this.btnAdd.Text = "اضافه";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // btnDeleteDLTypeMap
             // 
             this.btnDeleteDLTypeMap.Image = global::IE.Properties.Resources.Delete;
@@ -314,35 +498,33 @@
             this.btnAddDLTypeMap.UseVisualStyleBackColor = true;
             this.btnAddDLTypeMap.Click += new System.EventHandler(this.btnAddDLTypeMap_Click);
             // 
-            // rddG3DLType
+            // btnChange
             // 
-            this.rddG3DLType.Location = new System.Drawing.Point(287, 65);
-            this.rddG3DLType.Name = "rddG3DLType";
-            this.rddG3DLType.Size = new System.Drawing.Size(287, 20);
-            this.rddG3DLType.TabIndex = 5;
-            this.rddG3DLType.Text = "radDropDownList1";
+            this.btnChange.Image = global::IE.Properties.Resources.Applications;
+            this.btnChange.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChange.Location = new System.Drawing.Point(8, 277);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnChange.Size = new System.Drawing.Size(141, 37);
+            this.btnChange.TabIndex = 10;
+            this.btnChange.Text = "تغییر تنظیمات";
+            this.btnChange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
-            // tabPage4
+            // btnUpdate
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 23);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(789, 370);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "   تنظیمات   ";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.panel2.Controls.Add(this.lblStatus);
-            this.panel2.Controls.Add(this.pBar);
-            this.panel2.Controls.Add(this.btnExit);
-            this.panel2.Controls.Add(this.btnExecute);
-            this.panel2.Location = new System.Drawing.Point(0, 491);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(860, 51);
-            this.panel2.TabIndex = 1;
+            this.btnUpdate.Image = global::IE.Properties.Resources.Save_As;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(8, 319);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnUpdate.Size = new System.Drawing.Size(141, 37);
+            this.btnUpdate.TabIndex = 10;
+            this.btnUpdate.Text = "به روز رسانی";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExit
             // 
@@ -380,21 +562,54 @@
             this.panel1.Size = new System.Drawing.Size(860, 84);
             this.panel1.TabIndex = 0;
             // 
-            // pBar
+            // gb3
             // 
-            this.pBar.Location = new System.Drawing.Point(105, 32);
-            this.pBar.Name = "pBar";
-            this.pBar.Size = new System.Drawing.Size(690, 10);
-            this.pBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.pBar.TabIndex = 1;
+            this.gb3.Controls.Add(this.label10);
+            this.gb3.Controls.Add(this.label9);
+            this.gb3.Controls.Add(this.txtPassword);
+            this.gb3.Controls.Add(this.txtUserName);
+            this.gb3.ForeColor = System.Drawing.Color.ForestGreen;
+            this.gb3.Location = new System.Drawing.Point(155, 242);
+            this.gb3.Name = "gb3";
+            this.gb3.Size = new System.Drawing.Size(619, 114);
+            this.gb3.TabIndex = 11;
+            this.gb3.TabStop = false;
+            this.gb3.Text = "کاربر وب سرویس";
             // 
-            // lblStatus
+            // txtUserName
             // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(108, 13);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(0, 14);
-            this.lblStatus.TabIndex = 2;
+            this.txtUserName.Location = new System.Drawing.Point(46, 35);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(462, 22);
+            this.txtUserName.TabIndex = 0;
+            this.txtUserName.Text = "Admin";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(46, 73);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(462, 22);
+            this.txtPassword.TabIndex = 0;
+            this.txtPassword.Text = "admin";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(514, 38);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(57, 14);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "نام کاربری";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(514, 76);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 14);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "رمز عبور";
             // 
             // Main
             // 
@@ -428,8 +643,19 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rddDelphiDLType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rddG3DLType)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.gb1.ResumeLayout(false);
+            this.gb1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEstablishDate)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rddFiscalYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rddBranches)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rddLedgers)).EndInit();
+            this.gb2.ResumeLayout(false);
+            this.gb2.PerformLayout();
+            this.gb3.ResumeLayout(false);
+            this.gb3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -465,6 +691,24 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.ProgressBar pBar;
+        private Telerik.WinControls.UI.RadDropDownList rddFiscalYear;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox gb1;
+        private Telerik.WinControls.UI.RadDateTimePicker txtEstablishDate;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label label7;
+        private Telerik.WinControls.UI.RadDropDownList rddLedgers;
+        private Telerik.WinControls.UI.RadDropDownList rddBranches;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox gb2;
+        private System.Windows.Forms.TextBox txtSgPath;
+        private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.GroupBox gb3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUserName;
     }
 }
 

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SystemGroup.Financial.IVoucherManagement.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SystemGroup.Financial.IVoucherManagement.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/Jahad3g/x43fabd14/Financial/VoucherManagement/Services/VoucherService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:complexType name="VoucherData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuxiliaryNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchRef" type="xs:long" />
+      <xs:element minOccurs="0" name="Creator" type="xs:long" />
+      <xs:element minOccurs="0" name="CreatorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description_En" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FiscalYearRef" type="xs:long" />
+      <xs:element minOccurs="0" name="IsCurrencyBased" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsExternal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LedgerRef" type="xs:long" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="State" type="tns:VoucherState" />
+      <xs:element minOccurs="0" name="StateTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoucherItems" nillable="true" type="tns:ArrayOfVoucherItemData" />
+      <xs:element minOccurs="0" name="VoucherReferenceInfo" nillable="true" type="tns:ArrayOfReferenceInfo" />
+      <xs:element minOccurs="0" name="VoucherTypeCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VoucherTypeOwnerSystem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoucherTypeRef" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VoucherData" nillable="true" type="tns:VoucherData" />
+  <xs:simpleType name="VoucherState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="WithNoRevision" />
+      <xs:enumeration value="Note" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="VoucherState" nillable="true" type="tns:VoucherState" />
+  <xs:complexType name="ArrayOfVoucherItemData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VoucherItemData" nillable="true" type="tns:VoucherItemData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVoucherItemData" nillable="true" type="tns:ArrayOfVoucherItemData" />
+  <xs:complexType name="VoucherItemData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BaseCurrencyAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BaseCurrencyExchangeRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BaseCurrencyExchangeRateRef" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BaseCurrencyPrecision" type="xs:int" />
+      <xs:element minOccurs="0" name="BaseCurrencyRef" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BaseCurrencyTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Credit" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CurrencyAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CurrencyCredit" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CurrencyDebit" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CurrencyPrecision" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrencyRef" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="CurrencyTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DL4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DL5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DL6" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DL7" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DL8" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DL9" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DLLevel4Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DLLevel5Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DLLevel6Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DLLevel7Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DLLevel8Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DLLevel9Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DLTypeRef4" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="DLTypeRef5" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="DLTypeRef6" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="DLTypeRef7" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="DLTypeRef8" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="DLTypeRef9" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Debit" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description_En" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtraData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FollowUpDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FollowUpNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="IsSLTraceable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemOrService" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfSLDLLevels" type="xs:int" />
+      <xs:element minOccurs="0" name="OperationalCurrencyExchangeRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OperationalCurrencyExchangeRateRef" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="OperationalCurrencyPrecision" type="xs:int" />
+      <xs:element minOccurs="0" name="PurchaseOrSale" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RowNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="SLCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SLRef" type="xs:long" />
+      <xs:element minOccurs="0" name="SLTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxAccountType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TaxStateType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TransactionType" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VoucherItemData" nillable="true" type="tns:VoucherItemData" />
+  <xs:complexType name="ArrayOfReferenceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReferenceInfo" nillable="true" type="tns:ReferenceInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReferenceInfo" nillable="true" type="tns:ArrayOfReferenceInfo" />
+  <xs:complexType name="ReferenceInfo">
+    <xs:sequence>
+      <xs:element name="_x003C_Descriminator_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_Description_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_MasterEntityCode_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_MasterReferenceID_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_OriginalEntityCode_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_OriginalReferenceID_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_ReferenceNumber_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferenceInfo" nillable="true" type="tns:ReferenceInfo" />
+  <xs:complexType name="VoucherInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DailyNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="MasterEntityRef" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Number" type="xs:int" />
+      <xs:element minOccurs="0" name="Sequence" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ValidationErrors" nillable="true" type="q1:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element minOccurs="0" name="VoucherDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VoucherItemInformation" nillable="true" type="tns:ArrayOfAbstractVoucherItemInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VoucherInfo" nillable="true" type="tns:VoucherInfo" />
+  <xs:complexType name="ArrayOfAbstractVoucherItemInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AbstractVoucherItemInfo" nillable="true" type="tns:AbstractVoucherItemInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAbstractVoucherItemInfo" nillable="true" type="tns:ArrayOfAbstractVoucherItemInfo" />
+  <xs:complexType name="AbstractVoucherItemInfo">
+    <xs:sequence>
+      <xs:element name="_x003C_RowNumber_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_VoucherItemID_x003E_k__BackingField" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbstractVoucherItemInfo" nillable="true" type="tns:AbstractVoucherItemInfo" />
+  <xs:complexType name="ArrayOfVoucherData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VoucherData" nillable="true" type="tns:VoucherData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVoucherData" nillable="true" type="tns:ArrayOfVoucherData" />
+</xs:schema>
