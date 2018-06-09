@@ -48,7 +48,8 @@ namespace VoucherWebService
 
         public bool InsertVoucherToSg3(List<DelphiEntities.LinQ.AccVchHdr> final)
         {
-            RestServiceClient(this.sgPath, true);
+            //از نسخه 34 به بعد باید این گزینه false شود
+            RestServiceClient(this.sgPath, false);
             string authCookie = "";
             WebClient client = new WebClient();
             // در این جا نام کاربری و رمز عبور راهکاران را وارد می کنیم. سایر پارامتر ها را مانند زیر تنظیم می کنیم
@@ -67,7 +68,6 @@ namespace VoucherWebService
                 try
                 {
                     foreach (var i in final)
-
                     {
                         FinVoucher.VoucherData vd = new FinVoucher.VoucherData();
                         // در این جا مقدار کلید اصلی جدول 
@@ -78,7 +78,7 @@ namespace VoucherWebService
                         // در این جا تاریخ سند را درج می کنیم. در این جا از آدرس حال حاضر استفاده شده است
                         vd.Date = DateTime.Today;
                         // در این بخش شرح سند را وارد می کنیم
-                        vd.Description = "سند تست وب سرويس";
+                        vd.Description = i.HdrDesc;
                         // در این جا مقدار کلید اصلی جدول 
                         // GNR3.Ledger
                         // را وارد می کنیم 
@@ -144,7 +144,7 @@ namespace VoucherWebService
                     client.Dispose();
 
                     // نمایش نتیجه ی عملیات
-                   
+
                 }
                 catch (WebException webEx)
                 {
@@ -168,55 +168,63 @@ namespace VoucherWebService
         }
 
         private VoucherItemData[] GetVoucherItems(AccVchHdr hdr)
-        {            
+        {
             var items = db.AccVchItms.Where(w => w.HdrRef == hdr.HdrVchID).ToList();
             var feedList = new VoucherItemData[items.Count];
-            var counter = 1;
+            var counter = 0;
             var q = new FinVoucher.VoucherItemData();
+            string d1 = null, d2 = null, d3 = null;
             foreach (var i in items)
             {
-                if(i.Debit == 0)
+                if (i.DLRef != null)
+                    d1 = i.DLRef.Trim();
+                if (i.DlFive != null)
+                    d2 = i.DlFive.Trim();
+                if (i.DlSix != null)
+                    d3 = i.DlSix.Trim();
+                if (i.Debit == 0)
                 {
                     q = new FinVoucher.VoucherItemData
                     {
                         // شماره سطر که برای هر قلم به ترتیب از ۱ شماره گذاری می شود
-                        RowNumber = counter++,
+                        RowNumber = counter+1,
                         // میزان بستانکار در این مثال ۱۰ لحاظ شده                                            
                         Credit = decimal.Parse(i.Credit.ToString()),
                         // شرح قلم سند 
                         Description = i.Descr,
                         // کد معین فلم را در اینجا وارد می کنیم
                         SLCode = i.SLRef.Trim(),
-                        // تفصیلی سطح ۴ را در صورتی که نیاز بود در این جا وارد می کنیم
-                        DL4 = i.DLRef.Trim(),
-                        DL5 = i.DlFive.Trim(),
-                        DL6 = i.DlSix.Trim()
+                        // تفصیلی سطح ۴ را در صورتی که نیاز بود در این جا وارد می کنیم                        
+                        DL4 = d1,
+                        DL5 = d2,
+                        DL6 = d3
                         // تفصیلی سطح ۴ را در صورتی که نیاز بود در این جا وارد می کنیم
 
                     };
                 }
-                
-                else if(i.Credit == 0)
+
+                else if (i.Credit == 0)
                 {
                     q = new FinVoucher.VoucherItemData
                     {
                         // شماره سطر که برای هر قلم به ترتیب از ۱ شماره گذاری می شود
-                        RowNumber = counter++,
+                        RowNumber = counter+1,
                         // میزان بستانکار در این مثال ۱۰ لحاظ شده                    
-                        Debit = decimal.Parse(i.Debit.ToString()),                        
+                        Debit = decimal.Parse(i.Debit.ToString()),
                         // شرح قلم سند 
                         Description = i.Descr,
                         // کد معین فلم را در اینجا وارد می کنیم
                         SLCode = i.SLRef.Trim(),
                         // تفصیلی سطح ۴ را در صورتی که نیاز بود در این جا وارد می کنیم
-                        DL4 = i.DLRef.Trim(),
-                        DL5 = i.DlFive.Trim(),
-                        DL6 = i.DlSix.Trim()
+                        DL4 = d1,
+                        DL5 = d2,
+                        DL6 = d3
                         // تفصیلی سطح ۴ را در صورتی که نیاز بود در این جا وارد می کنیم
 
                     };
                 }
                 feedList[counter] = q;
+                counter++;
             }
 
             return feedList;
@@ -245,7 +253,6 @@ namespace VoucherWebService
             {
                 var q = ie.Configurations.Where(w => w.Name == "Branch").Single();
                 BranchRef = long.Parse(q.Value);
-                return true;
             }
 
             if (ie.Configurations.Where(w => w.Name == "Ledger").Count() == 0)
@@ -256,7 +263,6 @@ namespace VoucherWebService
             {
                 var q = ie.Configurations.Where(w => w.Name == "Ledger").Single();
                 LedgerRef = long.Parse(q.Value);
-                return true;
             }
 
             if (ie.Configurations.Where(w => w.Name == "FiscalYear").Count() == 0)
@@ -267,15 +273,15 @@ namespace VoucherWebService
             {
                 var q = ie.Configurations.Where(w => w.Name == "FiscalYear").Single();
                 FiscalYearRef = long.Parse(q.Value);
-                return true;
             }
+            return true;
         }
 
         public string AuthenticationServiceAddress;
 
         public string VoucherServiceAddress;
 
-        private static string WriteObject<T>(T anObject)
+        public string WriteObject<T>(T anObject)
         {
             DataContractJsonSerializer js = new DataContractJsonSerializer(typeof(T));
             MemoryStream ms = new MemoryStream();
@@ -303,7 +309,7 @@ namespace VoucherWebService
             }
         }
 
-        private string Login(WebClient client, string userName, string password, out string authCookie)
+        public string Login(WebClient client, string userName, string password, out string authCookie)
         {
             ///
             //WebClient client = new WebClient();
@@ -365,23 +371,30 @@ namespace VoucherWebService
             }
             else
             {
-                //try
-                //{
-                string baseAddressResolverService = baseWebAddress + BaseAddressResolverServiceRelativeAddress;
-                WebClient client = new WebClient();
-                string redirectorAddress = client.DownloadString(baseAddressResolverService + "/GetBaseAddress");
-                redirectorAddress = ReadObject<string>(redirectorAddress);
-                baseWebAddress = baseWebAddress.Substring(0, baseWebAddress.LastIndexOf("/"));
+                try
+                {
+                    string baseAddressResolverService = baseWebAddress + BaseAddressResolverServiceRelativeAddress;
+                    WebClient client = new WebClient();
 
-                AuthenticationServiceAddress = baseWebAddress + redirectorAddress + AuthenticationServiceRelativeAddress;
-                VoucherServiceAddress = baseWebAddress + redirectorAddress + VoucherServiceRelativeAddress;
-                //}
-                //catch (WebException e)
-                //{
-                //    //MessageBox.Show(new StreamReader(e.Response.GetResponseStream()).ReadToEnd().ToString());
+                    string redirectorAddress = client.DownloadString(baseAddressResolverService + "/GetBaseAddress");
+                    redirectorAddress = ReadObject<string>(redirectorAddress);
+                    baseWebAddress = baseWebAddress.Substring(0, baseWebAddress.LastIndexOf("/"));
 
-
-                //}
+                    AuthenticationServiceAddress = baseWebAddress + redirectorAddress + AuthenticationServiceRelativeAddress;
+                    VoucherServiceAddress = baseWebAddress + redirectorAddress + VoucherServiceRelativeAddress;
+                }
+                catch (WebException webEx)
+                {
+                    if (webEx.Response != null)
+                    {
+                        //نمایش خطا در صورت وجود                     
+                        MessageBox.Show(HandleError(webEx));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unknown Error!");
+                    }
+                }
 
 
             }

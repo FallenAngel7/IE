@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RahkaranEntities
 {
+    [Table("Fin3.VoucherItem")]
     public class VoucherItem
     {
+        [Key]
         public long VoucherItemID { get; set; }
         public long VoucherRef { get; set; }
         public long BranchRef { get; set; }

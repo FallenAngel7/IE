@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
-            this.radTextBox2 = new Telerik.WinControls.UI.RadTextBox();
+            this.txtUserName = new Telerik.WinControls.UI.RadTextBox();
+            this.txtPassword = new Telerik.WinControls.UI.RadTextBox();
             this.btnLogin = new Telerik.WinControls.UI.RadButton();
             this.btnCancel = new Telerik.WinControls.UI.RadButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUserName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -45,29 +45,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // radTextBox1
+            // txtUserName
             // 
-            this.radTextBox1.Font = new System.Drawing.Font("B Yekan+", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox1.Location = new System.Drawing.Point(56, 284);
-            this.radTextBox1.Name = "radTextBox1";
-            this.radTextBox1.Size = new System.Drawing.Size(199, 24);
-            this.radTextBox1.TabIndex = 1;
+            this.txtUserName.Font = new System.Drawing.Font("B Yekan+", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(56, 284);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(199, 24);
+            this.txtUserName.TabIndex = 0;
             // 
-            // radTextBox2
+            // txtPassword
             // 
-            this.radTextBox2.Font = new System.Drawing.Font("B Yekan+", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox2.Location = new System.Drawing.Point(56, 320);
-            this.radTextBox2.Name = "radTextBox2";
-            this.radTextBox2.PasswordChar = '*';
-            this.radTextBox2.Size = new System.Drawing.Size(199, 24);
-            this.radTextBox2.TabIndex = 2;
+            this.txtPassword.Font = new System.Drawing.Font("B Yekan+", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(56, 320);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(199, 24);
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(42, 363);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(104, 24);
-            this.btnLogin.TabIndex = 3;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "ورود";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -78,6 +79,7 @@
             this.btnCancel.Size = new System.Drawing.Size(105, 24);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "انصراف";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // pictureBox3
             // 
@@ -119,8 +121,8 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.radTextBox2);
-            this.Controls.Add(this.radTextBox1);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -132,8 +134,10 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "صفحه ورود";
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).EndInit();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
+            this.Load += new System.EventHandler(this.Login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtUserName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -147,8 +151,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Telerik.WinControls.UI.RadTextBox radTextBox1;
-        private Telerik.WinControls.UI.RadTextBox radTextBox2;
+        private Telerik.WinControls.UI.RadTextBox txtUserName;
+        private Telerik.WinControls.UI.RadTextBox txtPassword;
         private Telerik.WinControls.UI.RadButton btnLogin;
         private Telerik.WinControls.UI.RadButton btnCancel;
         private System.Windows.Forms.PictureBox pictureBox2;

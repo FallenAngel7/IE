@@ -29,9 +29,17 @@ namespace IE
             var loginForm = new Views.Login();
             result = loginForm.ShowDialog();
 
-            var mainForm = new Main();
-            mainForm.ShowDialog();
-            Application.Run(new Main());
+            if(result == DialogResult.OK)
+            {
+                //Application.Run(new Main());
+               
+            }
+            else
+            {
+                Application.Exit();
+            }
+            
+            
         }
     }
 }

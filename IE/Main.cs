@@ -90,9 +90,9 @@ namespace IE
             }
             else
             {
-                var q = ie.Configurations.Where(w => w.Name == "Branch").Single();
-                q.Value = rddBranches.SelectedValue.ToString();
-                ie.SaveChanges();
+                //var q = ie.Configurations.Where(w => w.Name == "Branch").Single();
+                //q.Value = rddBranches.SelectedValue.ToString();
+                //ie.SaveChanges();
             }
 
 
@@ -107,9 +107,9 @@ namespace IE
             }
             else
             {
-                var q = ie.Configurations.Where(w => w.Name == "Ledger").Single();
-                q.Value = rddLedgers.SelectedValue.ToString();
-                ie.SaveChanges();
+                //var q = ie.Configurations.Where(w => w.Name == "Ledger").Single();
+                //q.Value = rddLedgers.SelectedValue.ToString();
+                //ie.SaveChanges();
             }
 
             if (ie.Configurations.Where(w => w.Name == "Password").Count() == 0)
@@ -228,9 +228,9 @@ namespace IE
                 rddFiscalYear.DisplayMember = q.Value;
                 rddFiscalYear.Text = q.Value;
                 rddFiscalYear.Enabled = false;
-                gb1.Enabled = false;
-                gb2.Enabled = false;
-                gb3.Enabled = false;
+                //gb1.Enabled = false;
+                //gb2.Enabled = false;
+                //gb3.Enabled = false;
 
             }
             #endregion
@@ -270,7 +270,7 @@ namespace IE
             {
                 var q = ie.Configurations.Where(w => w.Name == "Ledger").Single();
                 rddLedgers.DisplayMember = q.Value;                
-                gb1.Enabled = false;
+                //gb1.Enabled = false;
             }
             #endregion
 

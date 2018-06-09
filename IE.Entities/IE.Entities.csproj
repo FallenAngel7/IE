@@ -52,6 +52,7 @@
     <Compile Include="Configuration.cs" />
     <Compile Include="DLTypeMap.cs" />
     <Compile Include="ExtensionMethods\DateTimeExtension.cs" />
+    <Compile Include="HashTools\HashGenerator.cs" />
     <Compile Include="IEContext.cs" />
     <Compile Include="LogHistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
