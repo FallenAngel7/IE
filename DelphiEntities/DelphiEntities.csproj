@@ -50,12 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccVchHdr.cs" />
-    <Compile Include="AccVchItm.cs" />
-    <Compile Include="AccVchType.cs" />
-    <Compile Include="DelphiContext.cs" />
-    <Compile Include="DL.cs" />
-    <Compile Include="DLViews.cs" />
+    <Compile Include="Models\AccVchHdr.cs" />
+    <Compile Include="Models\AccVchItm.cs" />
+    <Compile Include="Models\AccVchType.cs" />
+    <Compile Include="Models\DelphiContext.cs" />
+    <Compile Include="Models\DL.cs" />
+    <Compile Include="Models\DLViews.cs" />
     <Compile Include="LinQ\Delphi.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -67,7 +67,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="SL.cs" />
+    <Compile Include="Models\SL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

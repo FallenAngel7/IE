@@ -49,16 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration.cs" />
-    <Compile Include="DLTypeMap.cs" />
+    <Compile Include="Models\Configuration.cs" />
+    <Compile Include="Models\DLTypeMap.cs" />
     <Compile Include="ExtensionMethods\DateTimeExtension.cs" />
     <Compile Include="HashTools\HashGenerator.cs" />
-    <Compile Include="IEContext.cs" />
-    <Compile Include="LogHistory.cs" />
+    <Compile Include="Models\IEContext.cs" />
+    <Compile Include="Models\LogHistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="VoucherMap.cs" />
-    <Compile Include="VoucherTypeMap.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\VoucherMap.cs" />
+    <Compile Include="Models\VoucherTypeMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

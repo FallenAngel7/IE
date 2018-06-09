@@ -9,12 +9,6 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Globalization;
-using System.Net;
-using System.Text;
-using System.Security.Cryptography;
-using System.IO;
-using System.Runtime.Serialization.Json;
-using System.ServiceModel;
 using VoucherWebService;
 
 namespace IE
